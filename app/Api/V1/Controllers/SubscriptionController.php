@@ -24,8 +24,7 @@ class SubscriptionController extends Controller
 
     public function subscribeToBot(Request $request)
     {
-        $userId = $request->header('User-Id');
-
+        
         $chatId = $this->chat_id;
         $botToken = $this->bot_token;
 
@@ -36,14 +35,11 @@ class SubscriptionController extends Controller
             'chat_id' => $chatId,
             'text' => $message,
         ]);
-        
+
+        $messageId = $telegram->getMessageId();
         // TODO: Store the subscription in the database
 
-
-        return APIResponse::success($message, [
-            'chat_id' => $chatId,
-            'bot_token' => $botToken,
-        ]);
+        return APIResponse::success($message, $messageId);
     }
 
     /**
@@ -104,14 +100,11 @@ class SubscriptionController extends Controller
 
      public function webhook(Request $request)
      {
-         // Get webhook data from request body
          $webhookData = $request->all();
  
-         // Process webhook data
-         $telegram = new Api(env('TELEGRAM_BOT_TOKEN'));
+         $telegram = new TelegramBot(env('TELEGRAM_BOT_TOKEN'));
          $telegram->commandsHandler(true);
- 
-         // Return response
+
          return response()->json(['message' => 'Webhook received']);
      }
     
