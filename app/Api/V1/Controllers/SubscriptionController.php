@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace  App\Api\V1\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\APIResponse;
+use  App\Api\V1\Controllers\APIResponse;
 use Telegram\Bot\Api as TelegramBot;
 
 class SubscriptionController extends Controller
