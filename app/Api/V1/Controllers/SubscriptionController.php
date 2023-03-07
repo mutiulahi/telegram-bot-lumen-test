@@ -189,8 +189,6 @@ public function handleWebhook(Request $request)
         'poll_answer' => 'nullable|object',
     ]);
 
-
-
     $webhookData = $request->all();
 
     $telegram = new TelegramBot(env('TELEGRAM_BOT_TOKEN'));
