@@ -23,5 +23,5 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->post('subscribe-to-bot', 'SubscriptionController@subscribeToBot');
     $router->post('subscribe-to-channel', 'SubscriptionController@subscribeToChannel');
     $router->post('message-to-subscriber', 'SubscriptionController@sendMessageToSubscribers');
-    $router->post('/webhook', 'WebhookController@handleWebhook');
+    $router->post('/webhook', 'SubscriptionController@handleWebhook');
 });

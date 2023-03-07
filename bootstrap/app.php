@@ -80,7 +80,7 @@ $app->configure('app');
 // $app->routeMiddleware([
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
-
+$app->register(\SwaggerLume\ServiceProvider::class);
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers

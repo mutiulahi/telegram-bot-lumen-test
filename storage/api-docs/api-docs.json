@@ -1,0 +1,147 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Lumen API",
+        "description": "Lumen API",
+        "contact": {
+            "email": "tesleemolamilekan902@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000",
+            "description": "Lumen API"
+        }
+    ],
+    "paths": {
+        "/api/v1/subscribe-to-bot": {
+            "post": {
+                "tags": [
+                    "Subscription"
+                ],
+                "summary": "Subscribe to a bot",
+                "operationId": "subscribeToBot",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/api/v1/subscribe-to-channel": {
+            "post": {
+                "tags": [
+                    "Subscription"
+                ],
+                "summary": "Subscribe to a channel",
+                "operationId": "subscribeToChannel",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/api/v1/message-to-subscriber": {
+            "post": {
+                "summary": "Send message to subscribers",
+                "description": "Send a message to all subscribers of a Telegram bot or channel",
+                "operationId": "d1ea46d1367b12b741731c0ca3382c8b",
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "The message to send to subscribers",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/subscribe/webhook": {
+            "post": {
+                "tags": [
+                    "Subscription"
+                ],
+                "summary": "Webhooks to receive responses from messenger API",
+                "description": "Webhooks to receive responses from messenger API",
+                "operationId": "f8a560099edd03a29bf381eba5cff386",
+                "requestBody": {
+                    "description": "Webhook data",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "update_id": {
+                                        "type": "integer"
+                                    },
+                                    "message": {
+                                        "type": "object"
+                                    },
+                                    "edited_message": {
+                                        "type": "object"
+                                    },
+                                    "channel_post": {
+                                        "type": "object"
+                                    },
+                                    "edited_channel_post": {
+                                        "type": "object"
+                                    },
+                                    "inline_query": {
+                                        "type": "object"
+                                    },
+                                    "chosen_inline_result": {
+                                        "type": "object"
+                                    },
+                                    "callback_query": {
+                                        "type": "object"
+                                    },
+                                    "shipping_query": {
+                                        "type": "object"
+                                    },
+                                    "pre_checkout_query": {
+                                        "type": "object"
+                                    },
+                                    "poll": {
+                                        "type": "object"
+                                    },
+                                    "poll_answer": {
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Webhook received",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Webhook received"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
