@@ -12,16 +12,19 @@ class Controller extends BaseController
     /**
      * @OA\Info(
      *     version="1.0.0",
-     *     title="Lumen API",
-     *     description="Lumen API",
+     *     title="Telegram Bot API",
+     *     description="Telegram Bot API",
      *     @OA\Contact(
-     *         email="tesleemolamilekan902@gmail.com"
+     *          email="tesleemolamilekan902@gmail.com",
+     *          name="Tesleem Olamilekan MUTIULAHI",
+     * 
+     * 
      *    )
      * )
      */
     /**
      * @OA\Server(
-     *    description="Lumen API",
+     *    description="Telegram Bot API",
      *   url="http://localhost:8000"
      * )
      */

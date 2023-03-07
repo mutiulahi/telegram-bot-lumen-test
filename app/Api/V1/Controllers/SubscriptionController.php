@@ -94,6 +94,7 @@ class SubscriptionController extends Controller
 /**
      * @OA\Post(
      *     path="/api/v1/message-to-subscriber",
+     *    tags={"Subscription"},
      *     summary="Send message to subscribers",
      *     description="Send a message to all subscribers of a Telegram bot or channel",
      *     @OA\Parameter(
@@ -139,7 +140,7 @@ class SubscriptionController extends Controller
  * Webhooks to receive responses from messenger API
  *
  * @OA\Post(
- *     path="/subscribe/webhook",
+ *     path="/api/v1/webhook",
  *     summary="Webhooks to receive responses from messenger API",
  *     tags={"Subscription"},
  *     @OA\RequestBody(

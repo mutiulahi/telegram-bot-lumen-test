@@ -1,9 +1,10 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Lumen API",
-        "description": "Lumen API",
+        "title": "Telegram Bot API",
+        "description": "Telegram Bot API",
         "contact": {
+            "name": "Tesleem Olamilekan MUTIULAHI",
             "email": "tesleemolamilekan902@gmail.com"
         },
         "version": "1.0.0"
@@ -11,7 +12,7 @@
     "servers": [
         {
             "url": "http://localhost:8000",
-            "description": "Lumen API"
+            "description": "Telegram Bot API"
         }
     ],
     "paths": {
@@ -45,6 +46,9 @@
         },
         "/api/v1/message-to-subscriber": {
             "post": {
+                "tags": [
+                    "Subscription"
+                ],
                 "summary": "Send message to subscribers",
                 "description": "Send a message to all subscribers of a Telegram bot or channel",
                 "operationId": "d1ea46d1367b12b741731c0ca3382c8b",
@@ -66,14 +70,14 @@
                 }
             }
         },
-        "/subscribe/webhook": {
+        "/api/v1/webhook": {
             "post": {
                 "tags": [
                     "Subscription"
                 ],
                 "summary": "Webhooks to receive responses from messenger API",
                 "description": "Webhooks to receive responses from messenger API",
-                "operationId": "f8a560099edd03a29bf381eba5cff386",
+                "operationId": "e9a2d1ad88270e415c28955083307c8b",
                 "requestBody": {
                     "description": "Webhook data",
                     "required": true,
